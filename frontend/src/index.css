@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary / Brand from DESIGN.md */
+    --primary: 262 83% 70%;
+    /* #7C3AED approx in hsl */
+    --primary-foreground: 0 0% 100%;
+
+    /* We'll use CSS vars for exactly what's in DESIGN.md */
+    --color-primary: #7C3AED;
+    --color-primary-dark: #5B21B6;
+
+    --gradient-risk: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #EF4444 100%);
+    --color-bg-app: linear-gradient(160deg, #EDE9FE 0%, #FDF2F8 50%, #FEE2E2 100%);
+    --color-bg-card: #FFFFFF;
+    --color-bg-sidebar: #FFFFFF;
+
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --color-text-muted: #9CA3AF;
+
+    --color-status-in-progress: #8B5CF6;
+    --color-risk-very-high: #EF4444;
+    --color-risk-high-badge: #FEF2F2;
+    --color-risk-high-badge-text: #DC2626;
+    --color-card-dark-bg: #111827;
+    --color-card-dark-text: #FFFFFF;
+    --color-residual-bg: #FFF1F2;
+    --color-residual-dot: #F43F5E;
+
+    --color-border: #E5E7EB;
+    --color-border-light: #F3F4F6;
+
+    --color-chart-line: #6366F1;
+    --color-chart-dot: #4F46E5;
+
+    /* Spacing & Sizing */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+    /* Original Shadcn Variables Map */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 70%;
+    --radius: 0.5rem;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  a {
+    transition: opacity 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1 !important;
+}
+
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 2 !important;
+}
